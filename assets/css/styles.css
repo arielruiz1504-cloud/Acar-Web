@@ -43,6 +43,10 @@ a { color: inherit; }
 .card-horizontal { min-height: 190px; display: flex; align-items: flex-start; padding: 24px; border-top: 5px solid var(--green); border-radius: 8px; background: rgba(255, 255, 255, .1); box-shadow: 0 4px 6px rgba(0, 0, 0, .05); }
 .card-content h3 { margin: 0 0 10px; color: var(--white); font-size: 1.2rem; font-weight: 500; }
 .card-content p { margin: 0; color: rgba(255, 255, 255, .9); font-size: .95rem; line-height: 1.5; }
+.why-us .section-tag, .why-us .section-header p { color: var(--white); }
+.why-us .card-horizontal { background: rgba(255, 255, 255, .86); }
+.why-us .card-content h3 { color: var(--blue); }
+.why-us .card-content p { color: var(--blue); }
 
 .services, .why-us, .contact { padding-block: 72px; }
 .services h2, .why-us h2, .contact h2 { margin: 0 0 16px; font-weight: 400; }
