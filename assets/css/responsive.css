@@ -14,6 +14,7 @@
     .hero h1 { font-size: clamp(2.25rem, 7vw, 3rem); }
     .desktop-break { display: none; }
     .services-grid, .why-us-grid { grid-template-columns: repeat(2, 1fr); }
+    .cards-container { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -23,9 +24,9 @@
     .hero-content { padding-block: 38px; }
     .hero h1 { font-size: 2.25rem; }
     .hero p { font-size: 14px; }
-    .about h2 { font-size: 2rem; }
-    .card-horizontal { align-items: flex-start; padding: 18px 16px; }
-    .card-icon { flex-basis: 36px; margin-right: 14px; font-size: 1.7rem; }
+    .section-header h2 { font-size: 2rem; }
+    .cards-container { grid-template-columns: 1fr; gap: 16px; }
+    .card-horizontal { min-height: 0; padding: 20px 16px; }
     .card-content h3 { font-size: 1.1rem; }
     .card-content p { font-size: .9rem; }
     .services, .why-us, .contact { padding-block: 52px; }
