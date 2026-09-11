@@ -1,0 +1,16 @@
+{
+  "name": "acar-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web y formulario de contacto de Acar Servicios de Aseo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "nodemailer": "^10.0.8"
+  }
+}
