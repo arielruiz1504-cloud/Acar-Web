@@ -10,9 +10,10 @@
     .nav-links li + li { border-top: 1px solid #edf0f2; }
     .nav-links a { display: block; padding: 12px 0; }
     .header-cta { width: 100%; }
-    .hero, .hero-content { min-height: 380px; }
+    .hero, .hero-content { min-height: calc(100svh - 82px); }
     .hero h1 { font-size: clamp(2.25rem, 7vw, 3rem); }
     .desktop-break { display: none; }
+    .coverage-grid { gap: 24px; }
     .services-grid, .why-us-grid { grid-template-columns: repeat(2, 1fr); }
     .cards-container { grid-template-columns: repeat(2, 1fr); }
     .direct-contact { grid-template-columns: repeat(2, 1fr); }
@@ -22,11 +23,21 @@
 @media (max-width: 600px) {
     .container { width: min(100% - 32px, var(--content-width)); }
     .brand img { width: 145px; }
-    .hero, .hero-content { min-height: 410px; }
-    .hero-content { padding-block: 38px; }
+    .hero, .hero-content { min-height: calc(100svh - 82px); }
+    .hero-content { padding-block: 38px 170px; }
+    .hero-badge { margin-bottom: 16px; font-size: .75rem; }
     .hero h1 { font-size: 2.25rem; }
     .hero p { font-size: 14px; }
+    .hero-stats { padding: 24px 0; }
+    .hero-stats-inner { grid-template-columns: 1fr; gap: 12px; }
+    .hero-stat + .hero-stat { padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .35); border-left: 0; }
+    .hero-stat strong { font-size: 1.5rem; }
+    .hero-stat span { font-size: .7rem; }
     .section-header h2 { font-size: 2rem; }
+    .coverage { min-height: calc(100svh - 82px); padding: 62px 0 46px; }
+    .coverage .section-header { margin-bottom: 28px; }
+    .coverage-grid { grid-template-columns: 1fr; gap: 30px; }
+    .coverage-icon { height: 70px; font-size: 3.5rem; }
     .cards-container { grid-template-columns: 1fr; gap: 16px; }
     .card-horizontal { min-height: 0; padding: 20px 16px; }
     .card-content h3 { font-size: 1.1rem; }

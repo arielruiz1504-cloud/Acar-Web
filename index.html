@@ -28,10 +28,9 @@
                     <li><a class="active" href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#portafolio">Portafolio</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <a class="header-cta" href="#contacto">Escríbenos!</a>
+                <button class="header-cta" type="button" aria-expanded="false" aria-controls="chat-panel">Escríbenos!</button>
             </div>
         </nav>
     </header>
@@ -39,9 +38,50 @@
     <main>
         <section class="hero" id="inicio" aria-labelledby="hero-title">
             <div class="hero-content container">
-                <h1 id="hero-title">Servicios de Aseo y<br> Mantención de Oficinas</h1>
+                <span class="hero-badge">Servicios Integrales</span>
+                <h1 id="hero-title">Aseo y Mantención <br>de Oficinas</h1>
                 <p>Soluciones confiables y profesionales para la limpieza y el cuidado<br class="desktop-break"> continuo de tus espacios de trabajo.</p>
-                <a class="hero-cta" href="#servicios">Conoce más <span aria-hidden="true">↓</span></a>
+                <a class="hero-cta" href="#servicios">Conoce más</a>
+            </div>
+            <div class="hero-stats" aria-label="Indicadores destacados">
+                <div class="hero-stats-inner container">
+                    <div class="hero-stat">
+                        <strong>+20</strong>
+                        <span>Años de servicio</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>Nº 1</strong>
+                        <span>Calificación de Proveedores en empresas privadas</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>100%</strong>
+                        <span>Experiencia en servicio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="coverage" aria-labelledby="coverage-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="coverage-title">Cubrimos principales áreas<br class="desktop-break"> de la limpieza</h2>
+                </div>
+                <div class="coverage-grid">
+                    <article class="coverage-item">
+                        <img class="coverage-icon" src="assets/img/icono-oficina.png" alt="">
+                        <h3>Limpieza Empresarial</h3>
+                        <p>Aseo integral de oficinas, bodegas y áreas comunes, garantizando espacios limpios y ordenados para empresas.</p>
+                    </article>
+                    <article class="coverage-item">
+                        <img class="coverage-icon" src="assets/img/icono-inmobiliario.png" alt="">
+                        <h3>Limpieza Inmobiliaria</h3>
+                        <p>Servicios de limpieza profunda en casas y departamentos, ideales para mudanzas, arriendos o entregas de obra.</p>
+                    </article>
+                    <article class="coverage-item">
+                        <img class="coverage-icon" src="assets/img/icono-especial.png" alt="">
+                        <h3>Servicios Especiales</h3>
+                        <p>Lavado de alfombras, vidrios y jardinería, adaptados a las necesidades específicas de cada cliente.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -153,6 +193,27 @@
             </div>
         </section>
     </main>
+
+    <div class="chat-backdrop" data-chat-close></div>
+    <aside class="chat-panel" id="chat-panel" aria-labelledby="chat-title" aria-hidden="true">
+        <button class="chat-close" type="button" aria-label="Cerrar formulario de contacto" data-chat-close>&times;</button>
+        <h2 id="chat-title">Escríbenos!</h2>
+        <form class="chat-form" action="#" method="post">
+            <div class="chat-form-group">
+                <label for="chat-nombre">¿Cómo te llamas?</label>
+                <input type="text" id="chat-nombre" name="chat-nombre" placeholder="Nombre" required>
+            </div>
+            <div class="chat-form-group">
+                <label for="chat-email">Correo Electrónico</label>
+                <input type="email" id="chat-email" name="chat-email" placeholder="Email" required>
+            </div>
+            <div class="chat-form-group">
+                <label for="chat-mensaje">Escríbenos</label>
+                <textarea id="chat-mensaje" name="chat-mensaje" placeholder="Mensaje" rows="6" required></textarea>
+            </div>
+            <button class="chat-submit" type="submit">Enviar</button>
+        </form>
+    </aside>
 
     <footer class="site-footer">
         <div class="footer-main container">
