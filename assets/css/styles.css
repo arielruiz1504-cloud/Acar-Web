@@ -57,6 +57,14 @@ a { color: inherit; }
 .service-card-content { padding: 22px; }
 .service-card h3 { margin: 0 0 8px; color: var(--blue); font-size: 1.2rem; font-weight: 500; }
 .service-card p, .why-item p { margin: 0; color: var(--muted); }
+.service-help-card { display: flex; align-items: center; min-height: 280px; color: var(--white); background: var(--blue); }
+.service-help-card .service-card-content { width: 100%; }
+.service-help-card h3 { color: var(--white); }
+.service-help-card p { color: rgba(255, 255, 255, .9); }
+.service-help-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; margin-bottom: 18px; border: 2px solid var(--green); border-radius: 50%; color: var(--white); font-size: 1.35rem; }
+.service-help-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--white); font-weight: 500; text-decoration: none; }
+.service-help-link span { color: var(--green); font-size: 1.35rem; line-height: 1; transition: transform .2s ease; }
+.service-help-link:hover span { transform: translateX(4px); }
 .why-us { color: var(--white); background: linear-gradient(rgba(35, 134, 254, .9), rgba(35, 134, 254, .9)), url("../img/hero.jpg") center / cover; }
 .why-us-grid { margin-top: 30px; }
 .why-item { padding: 28px; text-align: center; border-radius: 8px; background: rgba(255, 255, 255, .12); }
