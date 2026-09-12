@@ -27,12 +27,23 @@ const submitForm = async (form) => {
             method: 'POST',
             body: new FormData(form)
         });
-        const result = await response.json();
+        const responseText = await response.text();
+        let result;
+
+        try {
+            result = JSON.parse(responseText);
+        } catch {
+            throw new Error('El servidor no devolvió una respuesta válida. Ejecuta la aplicación con npm start.');
+        }
+
         if (!response.ok) throw new Error(result.message || 'No fue posible enviar el formulario.');
         setFormStatus(form, result.message);
         form.reset();
     } catch (error) {
-        setFormStatus(form, error.message, true);
+        const message = error instanceof TypeError
+            ? 'No fue posible conectar con el servidor. Ejecuta la aplicación con npm start.'
+            : error.message;
+        setFormStatus(form, message, true);
     } finally {
         submitButton.disabled = false;
     }

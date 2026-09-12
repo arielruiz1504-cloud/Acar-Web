@@ -133,6 +133,8 @@ Luego abre:
 http://localhost:3000
 ```
 
+No abras `index.html` directamente ni uses un servidor estático como Live Server para probar los formularios: el endpoint `/api/contact` pertenece al servidor Node y requiere ejecutar `npm start`.
+
 ## Variables de entorno
 
 | Variable | Descripción |
