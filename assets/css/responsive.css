@@ -14,7 +14,7 @@
     .hero h1 { font-size: clamp(2.25rem, 7vw, 3rem); }
     .desktop-break { display: none; }
     .coverage-grid { gap: 24px; }
-    .services-grid, .why-us-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
     .cards-container { grid-template-columns: repeat(2, 1fr); }
     .footer-main { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
@@ -42,9 +42,11 @@
     .card-content h3 { font-size: 1.1rem; }
     .card-content p { font-size: .9rem; }
     .services, .why-us, .contact { padding-block: 52px; }
-    .services-grid, .why-us-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
     .services h2, .why-us h2 { font-size: 1.8rem; }
     .contact-container { padding: 26px 20px; }
     .footer-main { grid-template-columns: 1fr; gap: 28px; padding-block: 34px; }
     .footer-brand img { width: 165px; }
+    .footer-bottom { padding-right: 52px; padding-left: 16px; }
+    .github-link { right: 16px; }
 }
