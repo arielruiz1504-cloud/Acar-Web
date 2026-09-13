@@ -97,7 +97,7 @@ El correo del usuario se utiliza como dirección de respuesta para facilitar la 
 ├── package-lock.json
 ├── package.json
 ├── README.md
-└── server.js
+└── assets/js/server.js
 ```
 
 ## Instalación local
@@ -173,7 +173,7 @@ Responde en formato JSON con un mensaje para mostrar al usuario. El backend vali
 2. Publica el proyecto sin incluir `.env` ni `node_modules`.
 3. Ejecuta `npm install` en el servidor.
 4. Configura las variables SMTP en `.env`.
-5. Ejecuta `npm start` o utiliza un administrador de procesos como PM2.
+5. Ejecuta `npm start` o utiliza un administrador de procesos como PM2. El punto de entrada es `assets/js/server.js`.
 6. Configura el dominio o proxy inverso para dirigir el tráfico al puerto de la aplicación.
 
 Antes de publicar, verifica que el remitente SMTP pertenezca al dominio autorizado por el proveedor. Esto mejora la entregabilidad y reduce el riesgo de que los mensajes lleguen a spam.

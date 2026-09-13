@@ -6,7 +6,11 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
+const router = express.Router(); // Soporte para el prefijo de cPanel
+
+const projectRoot = path.resolve(__dirname, '../..');
 const port = Number(process.env.PORT) || 3000;
+
 const upload = multer({
     storage: multer.memoryStorage(),
     limits: { fileSize: 5 * 1024 * 1024 },
@@ -25,8 +29,9 @@ const upload = multer({
     }
 });
 
-app.use(express.static(__dirname));
+app.use(express.static(projectRoot));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const createTransporter = () => nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -43,7 +48,8 @@ const requiredFields = (body) => {
     return fields.filter((field) => !String(body[field] || '').trim());
 };
 
-app.post('/api/contact', upload.single('curriculum'), async (request, response) => {
+// Definición de la ruta de contacto
+const handleContact = async (request, response) => {
     const { body, file } = request;
     const missingFields = requiredFields(body);
     const isApplication = body.tipo === 'postulacion';
@@ -87,7 +93,14 @@ app.post('/api/contact', upload.single('curriculum'), async (request, response) 
         console.error('Error al enviar correo:', error.message);
         response.status(502).json({ message: 'No se pudo enviar el formulario. Inténtalo nuevamente.' });
     }
-});
+};
+
+// Registrar la ruta en /api/contact y en /backend/api/contact
+router.post('/api/contact', upload.single('curriculum'), handleContact);
+router.post('/contact', upload.single('curriculum'), handleContact);
+app.use('/backend', router);
+app.use('/api', router);
+app.post('/api/contact', upload.single('curriculum'), handleContact);
 
 app.use((error, request, response, next) => {
     if (error instanceof multer.MulterError && error.code === 'LIMIT_FILE_SIZE') {
@@ -101,6 +114,11 @@ app.use((error, request, response, next) => {
     next();
 });
 
-app.listen(port, () => {
-    console.log(`Acar Web disponible en http://localhost:${port}`);
-});
+// Inicio compatible con cPanel / Passenger y entorno local
+if (typeof(PhusionPassenger) !== 'undefined') {
+    app.listen('passenger');
+} else {
+    app.listen(port, () => {
+        console.log(`Acar Web disponible en http://localhost:${port}`);
+    });
+}
