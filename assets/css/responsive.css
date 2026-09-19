@@ -13,7 +13,7 @@
     .header-cta { width: 100%; }
     .hero h1 { font-size: clamp(2.25rem, 7vw, 3rem); }
     .desktop-break { display: none; }
-    .coverage-grid, .services-grid, .cards-container {
+    .hero-stats-inner, .coverage-grid, .services-grid, .cards-container {
         display: flex;
         gap: 24px;
         margin-right: -24px;
@@ -23,6 +23,13 @@
         scroll-snap-type: x mandatory;
         scrollbar-width: thin;
     }
+    .hero-stats-inner { margin-right: 0; padding: 0 24px 8px 0; }
+    .hero-stat {
+        flex: 0 0 min(390px, calc(100% - 48px));
+        padding: 8px 16px;
+        scroll-snap-align: start;
+    }
+    .hero-stat + .hero-stat { border-left: 0; }
     .coverage-item, .service-card, .card-horizontal {
         flex: 0 0 min(390px, calc(100% - 48px));
         scroll-snap-align: start;
@@ -40,20 +47,20 @@
     .hero h1 { font-size: 2.25rem; }
     .hero p { font-size: 14px; }
     .hero-stats { padding: 24px 0; }
-    .hero-stats-inner { grid-template-columns: 1fr; gap: 12px; }
-    .hero-stat + .hero-stat { padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .35); border-left: 0; }
+    .hero-stats-inner { gap: 16px; padding-right: 16px; }
+    .hero-stat { flex-basis: calc(100% - 32px); padding: 8px 12px; }
     .hero-stat strong { font-size: 1.5rem; }
     .hero-stat span { font-size: .7rem; }
     .section-header h2 { font-size: 2rem; }
-    .coverage { min-height: calc(100svh - var(--header-height)); padding: 62px 0 46px; }
+    .coverage { padding: 42px 0 36px; }
     .coverage .section-header { margin-bottom: 28px; }
     .coverage-grid, .services-grid, .cards-container { gap: 16px; margin-right: -16px; padding-right: 16px; }
     .coverage-item, .service-card, .card-horizontal { flex-basis: calc(100% - 32px); }
     .coverage-icon { height: 70px; font-size: 3.5rem; }
-    .card-horizontal { min-height: 0; padding: 20px 16px; }
+    .card-horizontal { min-height: 220px; padding: 24px 16px; }
     .card-content h3 { font-size: 1.1rem; }
     .card-content p { font-size: .9rem; }
-    .services, .why-us, .contact { padding-block: 52px; }
+    .services, .why-us, .contact { min-height: calc(100svh - var(--header-height)); padding-block: 52px; }
     .services h2, .why-us h2 { font-size: 1.8rem; }
     .contact-container { padding: 26px 20px; }
     .footer-main { grid-template-columns: 1fr; gap: 28px; padding-block: 34px; }
