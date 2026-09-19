@@ -11,6 +11,8 @@
     .nav-links li + li { border-top: 1px solid #edf0f2; }
     .nav-links a { display: block; padding: 12px 0; }
     .header-cta { width: 100%; }
+    .hero { background-position: center 42%; }
+    .hero-content { align-items: center; padding: 30px 0 170px; text-align: center; }
     .hero h1 { font-size: clamp(2.25rem, 7vw, 3rem); }
     .desktop-break { display: none; }
     .hero-stats-inner, .coverage-grid, .services-grid, .cards-container {
@@ -35,7 +37,14 @@
         scroll-snap-align: start;
     }
     .coverage-item { padding: 20px 18px; border-radius: 8px; background: var(--white); box-shadow: 0 5px 15px rgba(0, 0, 0, .06); }
-    .service-card, .card-horizontal { min-width: 0; }
+    .service-card { min-height: 340px; display: flex; flex-direction: column; text-align: center; }
+    .service-card-img { height: 200px; }
+    .service-help-card { min-height: 340px; }
+    .card-horizontal { min-width: 0; min-height: 220px; align-items: center; justify-content: center; text-align: center; }
+    .services, .why-us, .contact { min-height: calc(100svh - var(--header-height)); display: flex; flex-direction: column; justify-content: center; }
+    .contact-container { width: 100%; text-align: center; }
+    .form-group label { text-align: left; }
+    .footer-brand, .footer-column { align-items: center; text-align: center; }
     .footer-main { grid-template-columns: 1fr 1fr; gap: 30px; }
 }
 
