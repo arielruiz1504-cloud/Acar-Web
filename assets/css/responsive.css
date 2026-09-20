@@ -45,6 +45,7 @@
     .contact-container { width: 100%; text-align: center; }
     .form-group label { text-align: left; }
     .footer-brand, .footer-column { align-items: center; text-align: center; }
+    .footer-main .footer-column { display: none; }
     .footer-main { grid-template-columns: 1fr 1fr; gap: 30px; }
 }
 
